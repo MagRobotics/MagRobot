@@ -1,8 +1,8 @@
 # MagRobot: An Open Simulation Platform for Magnetically Navigated Robots
 
-<!-- [![Paper](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)](https://arxiv.org/xxxxxxxxx)
+[![Paper](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)](https://arxiv.org/xxxxxxxxx)
 [![Video](https://img.shields.io/badge/Video-YouTube-red.svg)](https://www.youtube.com/xxxxxxxx)
-[![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) -->
+[![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 <!-- [English](./README.md) | [简体中文](./README_CN.md) -->
 
