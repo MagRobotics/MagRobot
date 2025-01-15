@@ -1,0 +1,198 @@
+solid Created by Gmsh
+facet normal 1 1.42109e-16 4.75173e-32
+  outer loop
+    vertex 50 -50.00000000000001 -80
+    vertex 49.99999999999999 50.00000000000001 -80
+    vertex 49.99999999999999 49.99999999999999 5
+  endloop
+endfacet
+facet normal 1 1.42109e-16 0
+  outer loop
+    vertex 50 -50.00000000000001 5
+    vertex 50 -50.00000000000001 -80
+    vertex 49.99999999999999 49.99999999999999 5
+  endloop
+endfacet
+facet normal 0 1 -0
+  outer loop
+    vertex 49.99999999999999 49.99999999999999 -80
+    vertex -50.00000000000001 49.99999999999999 5
+    vertex 49.99999999999999 49.99999999999999 5
+  endloop
+endfacet
+facet normal 0 1 0
+  outer loop
+    vertex 49.99999999999999 49.99999999999999 -80
+    vertex -50.00000000000001 49.99999999999999 -80
+    vertex -50.00000000000001 49.99999999999999 5
+  endloop
+endfacet
+facet normal -1 0 0
+  outer loop
+    vertex -50.00000000000001 49.99999999999999 -80
+    vertex -50.00000000000001 -50.00000000000001 5
+    vertex -50.00000000000001 49.99999999999999 5
+  endloop
+endfacet
+facet normal -1 0 0
+  outer loop
+    vertex -50.00000000000001 49.99999999999999 -80
+    vertex -50.00000000000001 -50.00000000000001 -80
+    vertex -50.00000000000001 -50.00000000000001 5
+  endloop
+endfacet
+facet normal 0 -1 -0
+  outer loop
+    vertex 50 -50.00000000000001 5
+    vertex -50.00000000000001 -50.00000000000001 -80
+    vertex 50.00000000000001 -50.00000000000001 -80
+  endloop
+endfacet
+facet normal -0 -1 0
+  outer loop
+    vertex 50 -50.00000000000001 5
+    vertex -50.00000000000001 -50.00000000000001 5
+    vertex -50.00000000000001 -50.00000000000001 -80
+  endloop
+endfacet
+facet normal 0 0 1
+  outer loop
+    vertex 49.99999999999999 49.99999999999999 5
+    vertex -50.00000000000001 49.99999999999999 5
+    vertex -50.00000000000001 -50.00000000000001 5
+  endloop
+endfacet
+facet normal 0 0 1
+  outer loop
+    vertex 49.99999999999999 49.99999999999999 5
+    vertex -50.00000000000001 -50.00000000000001 5
+    vertex 50 -50.00000000000001 5
+  endloop
+endfacet
+facet normal 0 0 -1
+  outer loop
+    vertex -50.00000000000001 -50.00000000000001 -80
+    vertex -45.00000000000001 -45.00000000000002 -80
+    vertex 45 -45.00000000000002 -80
+  endloop
+endfacet
+facet normal 0 0 -1
+  outer loop
+    vertex -50.00000000000001 -50.00000000000001 -80
+    vertex 45 -45.00000000000002 -80
+    vertex 50.00000000000002 -50.00000000000001 -80
+  endloop
+endfacet
+facet normal 0 0 -1
+  outer loop
+    vertex 45 44.99999999999999 -80
+    vertex 50.00000000000002 -50.00000000000001 -80
+    vertex 45 -45.00000000000002 -80
+  endloop
+endfacet
+facet normal 0 -0 -1
+  outer loop
+    vertex 50.00000000000002 50.00000000000001 -80
+    vertex 50.00000000000002 -50.00000000000001 -80
+    vertex 45 44.99999999999999 -80
+  endloop
+endfacet
+facet normal 0 -0 -1
+  outer loop
+    vertex -45.00000000000001 44.99999999999999 -80
+    vertex -45.00000000000001 -45.00000000000002 -80
+    vertex -50.00000000000001 -50.00000000000001 -80
+  endloop
+endfacet
+facet normal 0 0 -1
+  outer loop
+    vertex -50.00000000000001 50.00000000000001 -80
+    vertex -45.00000000000001 44.99999999999999 -80
+    vertex -50.00000000000001 -50.00000000000001 -80
+  endloop
+endfacet
+facet normal 0 0 -1
+  outer loop
+    vertex -50.00000000000001 50.00000000000001 -80
+    vertex 50.00000000000002 50.00000000000001 -80
+    vertex 45 44.99999999999999 -80
+  endloop
+endfacet
+facet normal 0 0 -1
+  outer loop
+    vertex -50.00000000000001 50.00000000000001 -80
+    vertex 45 44.99999999999999 -80
+    vertex -45.00000000000001 44.99999999999999 -80
+  endloop
+endfacet
+facet normal -7.89492e-17 -1 0
+  outer loop
+    vertex 45 44.99999999999999 -80
+    vertex -45.00000000000001 44.99999999999999 0
+    vertex -45.00000000000001 44.99999999999999 -80
+  endloop
+endfacet
+facet normal -7.89492e-17 -1 -0
+  outer loop
+    vertex 45 44.99999999999999 0
+    vertex -45.00000000000001 44.99999999999999 0
+    vertex 45 44.99999999999999 -80
+  endloop
+endfacet
+facet normal -1 0 0
+  outer loop
+    vertex 45 44.99999999999999 -80
+    vertex 45 -45.00000000000001 -80
+    vertex 45 -45.00000000000001 0
+  endloop
+endfacet
+facet normal -1 -0 -0
+  outer loop
+    vertex 45 44.99999999999999 0
+    vertex 45 44.99999999999999 -80
+    vertex 45 -45.00000000000001 0
+  endloop
+endfacet
+facet normal 0 1 0
+  outer loop
+    vertex 45 -45.00000000000002 -80
+    vertex -45 -45.00000000000002 -80
+    vertex -45 -45.00000000000002 0
+  endloop
+endfacet
+facet normal 0 1 0
+  outer loop
+    vertex 45 -45.00000000000002 0
+    vertex 45 -45.00000000000002 -80
+    vertex -45 -45.00000000000002 0
+  endloop
+endfacet
+facet normal 1 7.89492e-17 0
+  outer loop
+    vertex -45.00000000000001 44.99999999999999 -80
+    vertex -45.00000000000001 -45.00000000000002 0
+    vertex -45.00000000000001 -45.00000000000002 -80
+  endloop
+endfacet
+facet normal 1 7.89492e-17 0
+  outer loop
+    vertex -45.00000000000001 44.99999999999999 0
+    vertex -45.00000000000001 -45.00000000000002 0
+    vertex -45.00000000000001 44.99999999999999 -80
+  endloop
+endfacet
+facet normal 0 -0 -1
+  outer loop
+    vertex 45 44.99999999999998 0
+    vertex 45 -45.00000000000001 0
+    vertex -45.00000000000001 -45.00000000000002 0
+  endloop
+endfacet
+facet normal -0 0 -1
+  outer loop
+    vertex 45 44.99999999999998 0
+    vertex -45.00000000000001 -45.00000000000002 0
+    vertex -45.00000000000001 44.99999999999999 0
+  endloop
+endfacet
+endsolid Created by Gmsh

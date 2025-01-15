@@ -1,0 +1,1 @@
+[[],[],[],[],[{"neural_input":""}],[{"background_color":[0.85098,0.85098,0.85098],"cam":0,"contactDistance":0.003,"field_show":0,"force_scale":[0.0,0.0],"friction_coefficient":0.04,"gravity":[0,0,-9.8],"step":0.03,"tra":0}],[],[],[]]
