@@ -1,5 +1,7 @@
 # Simulation Environment Parameter Configuration
 
+This scenario simulates the navigation process of the capsule endoscope in the gastrointestinal tract. A 5-magnetic sensor array is used for pose estimation, with a sensor noise level of 4e-6.
+
 ## 1. Soft Environment Parameters
 - Environment Type: soft_fixed
 - Surface Mesh File: model/environment/stomach.stl

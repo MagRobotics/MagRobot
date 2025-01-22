@@ -1,12 +1,13 @@
 # Simulation Environment Parameter Configuration
 
-## 1. Soft Environment Parameters
+The simulation used three magnetic field sensors for positioning, with a sensor noise level of 4e-6, combined with an eight-coil electromagnetic array to drive the capsule endoscope.
 
+## 1. Soft Environment Parameters
 - Environment Type: soft_fixed
 - Surface Mesh File: model/environment/stomach.stl
 - Volume Mesh File: model/environment/stomach.msh
 - Pose: [0.03, 0.25, 0.97, 0, 0.0, 0.0, 1]
-- Scale Factor: 0.022
+- Scale: 0.022
 - Mass: 1.0
 - Young's Modulus: 100000
 - Poisson's Ratio: 0.3
@@ -24,82 +25,73 @@
 
 ## 3. Electromagnetic Coil Configuration
 8 electromagnetic coils with parameters as follows:
-
 1. Coil 1:
    - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [-0.17, 0.25, 1.15, -1, 0.0, 0.0]
+   - Position: [-0.17, 0.3, 1.15, 1.0, 0.0, 0.0]
    - Number of Turns: 100
 
 2. Coil 2:
    - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [0.17, 0.25, 1.15, -1, 0.0, 0.0]
+   - Position: [0.17, 0.3, 1.15, -1, 0.0, 0.0]
    - Number of Turns: 100
 
 3. Coil 3:
    - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [0, 0.08, 1.15, 0, 1, 0.0]
+   - Position: [0, 0.13, 1.15, 0, 1, 0.0]
    - Number of Turns: 100
 
 4. Coil 4:
    - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [0, 0.42, 1.15, 0, -1, 0.0]
+   - Position: [0, 0.47, 1.15, 0, -1, 0.0]
    - Number of Turns: 100
 
 5. Coil 5:
    - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [0.1012, 0.3512335, 1.2034, -0.62469505, -0.62469505, -0.46852129]
+   - Position: [0.1512, 0.4512335, 1.2834, -0.62469505, -0.62469505, -0.46852129]
    - Number of Turns: 100
 
 6. Coil 6:
    - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [-0.1012, 0.3512335, 1.2034, 0.62469505, -0.62469505, -0.46852129]
+   - Position: [-0.1512, 0.4512335, 1.2834, 0.62469505, -0.62469505, -0.46852129]
    - Number of Turns: 100
 
 7. Coil 7:
    - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [-0.1012335, 0.1487665, 1.20342525, 0.62469505, 0.62469505, -0.46852129]
+   - Position: [-0.1512335, 0.1487665, 1.28342525, 0.62469505, 0.62469505, -0.46852129]
    - Number of Turns: 100
 
 8. Coil 8:
    - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [0.1012335, 0.1487665, 1.20342525, -0.62469505, 0.62469505, -0.46852129]
+   - Position: [0.1512335, 0.1487665, 1.28342525, -0.62469505, 0.62469505, -0.46852129]
    - Number of Turns: 100
 
 ## 4. Sensor Configuration
 1. Sensor 1:
-   - Position: [-0.0076, 0.21, 0.896, 0.0, 0.0, 0.0, 1.0]
-   - Noise: 8e-7
+   - Position: [0.03, 0.20, 0.896, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 4e-6
 
 2. Sensor 2:
-   - Position: [0.045, 0.28, 0.896, 0.0, 0.0, 0.0, 1.0]
-   - Noise: 8e-7
+   - Position: [0.12, 0.28, 0.896, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 4e-6
 
 3. Sensor 3:
-   - Position: [-0.0076, 0.34, 0.896, 0.0, 0.0, 0.0, 1.0]
-   - Noise: 8e-7
-
-4. Sensor 4:
-   - Position: [0.0976, 0.21, 0.896, 0.0, 0.0, 0.0, 1.0]
-   - Noise: 8e-7
-
-5. Sensor 5:
-   - Position: [0.0976, 0.34, 0.896, 0.0, 0.0, 0.0, 1.0]
-   - Noise: 8e-7
+   - Position: [0.03, 0.35, 0.896, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 4e-6
 
 ## 5. Environment Settings
 - Gravity: [0.0, 0.0, -9.8]
 - Force Display Scale: [0.0, 0.0]
 - Time Step: 0.02
 - Friction Coefficient: 0.1
-- Contact Distance: 0.001
+- Contact Distance: 0.0005
 - Background Color: [1, 1, 1]
 - Camera Parameters: cam=0
 - Trajectory Parameters: tra=1
@@ -128,34 +120,23 @@
 - Algorithm Type: EKF
 - EKF_Q: 6x6 Identity Matrix
 
-[
-[1, 0, 0, 0, 0, 0],
+[[1, 0, 0, 0, 0, 0],
 [0, 1, 0, 0, 0, 0],
 [0, 0, 1, 0, 0, 0],
 [0, 0, 0, 1, 0, 0],
 [0, 0, 0, 0, 1, 0],
-[0, 0, 0, 0, 0, 1]
-]
+[0, 0, 0, 0, 0, 1]]
+- EKF_R: 9x9 Identity Matrix
 
-- EKF_R: 15x15 Identity Matrix
-
-[
-[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
-]
+[[1, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 1, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 1, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 1, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 1, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 1, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 1]]
 
 ## 8. Control Parameters
 - Position Control: PID
@@ -163,6 +144,6 @@
 - ki: 0
 - kd: 40
 - Attitude Control: PID
-- kp2: 40000
+- kp2: 80000
 - ki2: 0
-- kd2: 4000 
+- kd2: 6000

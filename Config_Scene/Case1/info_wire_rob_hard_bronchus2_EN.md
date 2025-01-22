@@ -1,8 +1,10 @@
 # Simulation Environment Parameter Configuration
 
+In this simulation, a permanent magnet with a magnetic moment of 0.03 A·m² was embedded in the bronchoscope tip, navigated by an external magnetic field controlled by a six-joint robotic arm. The initial magnetic moment of the external magnet was 230 A·m², corresponding to a magnetic field strength of 24 Gauss. It should be noted that a smaller magnetic field strength may lead to insufficient steering ability, thereby affecting the navigation performance of the bronchoscope in complex airways.
+
 ## 1. Environment Parameters
-- Environment Type: rigid_fixed
-- Surface Mesh File: model/environment/bronchus.stl
+- Environment Type: rigid_static
+- File Path: model/environment/bronchus.stl
 - Pose: [0.0, 0.35, 0.97, 5.336750069161485e-18, 0.9961946980917454, -0.08715574274765815, 6.0999332417281e-17]
 - Scale: 0.025
 - Color: [1.0, 0.0, 0.0, 0.15]
@@ -23,7 +25,7 @@
 ## 3. Robot Configuration
 - Drive Type: rob
 - Robot Base Pose: [-0.5, 0.2, 0.745, 0, 0, 0, 1]
-- Magnetic Moment: 1400
+- Magnetic Moment: 700
 - Magnet Pose: [0.243067083, 0.348063424, 1.000999998844, -1.1191633e-25, 4.26471861e-09, 0.382675455, 0.923882837]
 - Flag: 1
 - Visualization: mag
@@ -47,4 +49,4 @@
 
 ## 7. Control Parameters
 - Control Type: wire_openloop
-- Magnetic Field Strength: 0.004828 
+- Magnetic Field Strength: 0.002414 

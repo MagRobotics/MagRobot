@@ -13,29 +13,26 @@
   - [Overview](#overview)
     - [Project Description](#project-description)
   - [Key Features](#key-features)
-  - [Project Structure](#project-structure)
+  - [Main Project Structure](#main-project-structure)
   - [Installation Guide](#installation-guide)
     - [System Requirements](#system-requirements)
     - [Basic Environment Setup](#basic-environment-setup)
-    - [Required Python Libraries](#required-python-libraries)
-    - [Optional Modules](#optional-modules)
-  - [Running Instructions](#running-instructions)
+    - [Required Libraries](#required-libraries)
+    - [Optional Libraries](#optional-libraries)
+    - [Running Instructions](#running-instructions)
   - [Simulation Cases](#simulation-cases)
     - [Case 1: Bronchoscopy Navigation Experiment](#case-1-bronchoscopy-navigation-experiment)
-      - [Case Description](#case-description)
-      - [24Gs Magnetic Field Strength Experiment](#24gs-magnetic-field-strength-experiment)
-        - [Simulation Results](#simulation-results)
-      - [48Gs Magnetic Field Strength Experiment](#48gs-magnetic-field-strength-experiment)
-        - [Simulation Results](#simulation-results-1)
+      - [**Scene Description**](#scene-description)
+      - [**Navigation Details**](#navigation-details)
+      - [**Control Method:**](#control-method)
     - [Case 2: Endovascular Intervention Simulation](#case-2-endovascular-intervention-simulation)
-      - [Case Description](#case-description-1)
-      - [Three-Coil Configuration](#three-coil-configuration)
-      - [Eight-Coil Configuration](#eight-coil-configuration)
+      - [**Scene Description**](#scene-description-1)
+      - [**Navigation Details**](#navigation-details-1)
+      - [**Control Method:**](#control-method-1)
     - [Case 3: Magnetic Navigation Capsule Endoscopy Simulation](#case-3-magnetic-navigation-capsule-endoscopy-simulation)
-      - [Case Description](#case-description-2)
-      - [Three-Sensor Configuration (High Noise)](#three-sensor-configuration-high-noise)
-      - [Five-Sensor Configuration (High Noise)](#five-sensor-configuration-high-noise)
-      - [Five-Sensor Configuration (Low Noise)](#five-sensor-configuration-low-noise)
+      - [**Scene Description**](#scene-description-2)
+      - [**Navigation Details**](#navigation-details-2)
+      - [**Control Method:**](#control-method-2)
   - [License](#license)
   - [Citation](#citation)
   - [Contact Information](#contact-information)
@@ -60,27 +57,46 @@ If you have any questions about the repository or the use of the simulator, plea
 - **Simulation Verification and Optimization**: The platform supports performance benchmarking of hardware configurations and algorithms, can connect to various input and display devices, assisting in the development and training of medical robot systems
 - **Real-time Visualization and Data Export**: Simulation results can be visualized in real-time, including magnetic fields, force fields, 3D trajectories, etc., while supporting data export in CSV format for further analysis and processing
 
-## Project Structure
+## Main Project Structure
 ```
-MagRobot/
-├── bin/
-│   └── Release/
-│       ├── MNSS.exe
-│       └── Qt5WebEngineCore.dll
-├── demo/
-│   ├── Environment_Package/
-│   └── Module_Package/
-├── docs/
-│   └── manual.docx
-└── README.md
+MagRobot/                       # Root directory
+├── bin/                        # Contains compiled executables and runtime dependencies
+│   └── Release/                # Contains release version executables
+│       └── MNSS.exe            # Main program executable
+├── Config_Scene/               # Configuration files for different application scenarios
+│   ├── Case1                   # Bronchoscopy navigation experiment configurations
+│   ├── Case2                   # Endovascular intervention simulation configurations
+│   └── Case3                   # Magnetic capsule endoscopy simulation configurations
+├── demo_c/                     # Core functional modules and example code
+│   ├── Control_Package         # Control algorithm package
+│   ├── Data_Driven             # Data-driven related modules
+│   ├── Environment_Package     # Environment models and physical simulation modules
+│   ├── GUI_interface           # Graphical user interface related code
+│   ├── Magnetic_Engine         # Magnetic field calculation and magnetic drive engine
+│   ├── Manipulator_Kinematics  # Robot kinematics calculation module
+│   ├── model                   # Model files and definitions
+│   ├── Module_Package          # Functional module integration package
+│   ├── Pose_Transform          # Pose transformation tools
+│   ├── post_processing         # Data post-processing utilities
+│   ├── Sofa_Interface          # SOFA framework interface
+│   ├── State_Estimation        # State estimation module
+│   ├── Trajectory_Package      # Trajectory planning module
+│   ├── animate_controller.py   # Animation control script
+│   ├── create_scene.py         # Scene creation utility
+│   ├── field_show.py           # Magnetic field visualization
+│   ├── hand_eye_calibration.py # Calibration utility
+│   ├── main.py                 # Main program entry
+│   ├── Monitor.py              # System monitoring
+│   ├── path_controller.py      # Path control implementation
+│   ├── position_estimate.py    # Position estimation
+│   ├── post_processing.py      # Results processing
+│   ├── record.py               # Data recording utility
+│   ├── rotation_maxwell.py     # Maxwell equations solver
+│   ├── simulator_setting.py    # Simulation parameters
+│   └── 
+├── lib/                        # Project required libraries and dependencies
+└── README.md                   # Project documentation
 ```
-
-Main directory descriptions:
-- `bin/`: Contains compiled executables and runtime dependencies
-- `demo/`: Contains demo cases and example code
-- `docs/`: Contains project-related documentation
-- `Environment_Package/`: Provides various simulation environment models
-- `Module_Package/`: Contains implementations of various functional modules
 
 ## Installation Guide
 
@@ -93,110 +109,118 @@ Main directory descriptions:
 1. Download and extract the software package (Note: path should not contain Chinese characters)
 2. Install Python 3.8
    - Select "Add python to environment variables" during installation
-   - If multiple Python versions exist, set 3.8 as highest priority
+   - If multiple python versions exist, set 3.8 as highest priority
    - When using conda environment, set `PYTHONHOME` environment variable
 
-### Required Python Libraries
+### Required Libraries
 ```bash
 $ pip install numpy
 $ pip install scipy
 $ pip install keyboard
 ```
 
-### Optional Modules
+### Optional Libraries
 Install other third-party libraries as needed:
 ```bash
 $ pip install matplotlib
 $ pip install pandas     
-# Other optional libraries...
+$ ...
 ```
 
-## Running Instructions
-1. Launch software: Double-click `bin/Release/MNSS.exe`
-2. For detailed usage instructions, please refer to: `manual.docx`
+<!-- ## Running Instructions
+Launch software: Double-click `bin/Release/MNSS.exe` -->
+
+### Running Instructions
+
+The software is a pre-compiled version. To run it, follow these steps:
+
+1. Navigate to the `bin/Release` directory.
+2. Double-click the `MNSS.exe` file to launch the software. 
 
 ## Simulation Cases
 ### Case 1: Bronchoscopy Navigation Experiment
-#### Case Description
-Bronchoscopy is an important medical tool for examining and treating lung diseases, and magnetic navigation technology can enhance its flexibility and navigation capabilities in complex airways. This simulation case simulates the navigation process of a magnetic navigation bronchoscope in segmental bronchi, demonstrating the impact of different magnetic field strengths on navigation performance.
-![Bronchoscopy_Simulation](images/Bronchoscopy.jpg)
 
-#### 24Gs Magnetic Field Strength Experiment
-In the initial simulation, a permanent magnet with a magnetic moment of 0.03 A·m² was embedded in the bronchoscope tip, navigated by an external magnetic field controlled by a six-joint robotic arm. The initial magnetic moment of the external magnet was 230 A·m², corresponding to a magnetic field strength of 24 Gauss.
+#### **Scene Description**
+![Bronchoscopy_Simulation](images/Bronchoscopy.png)
+Bronchoscopy is an important medical tool for examining and treating lung diseases, and magnetic navigation technology can enhance its flexibility and navigation capabilities in complex airways. This simulation case simulates the navigation process of a magnetic navigation bronchoscope in segmental bronchi, demonstrating the impact of magnetic field on navigation performance.
 
-##### Simulation Results
-- The bronchoscope showed significant angle deviation during navigation, making it difficult to move along the target path
-- Multiple collisions occurred, failing to reach the target position smoothly
-- Experimental results indicate insufficient magnetic field strength, requiring optimization adjustments
+#### **Navigation Details**
 
-![Case1_Simulation](images/Bronchoscopy_case1.jpg)
+![Bronchoscopy_Simulation](images/Bronchoscopy_.png)
 
-#### 48Gs Magnetic Field Strength Experiment
-To improve navigation performance, the external magnet's magnetic moment was increased to 700 A·m², corresponding to an increased magnetic field strength of 48 Gauss. The optimized magnetic navigation system significantly improved the bronchoscope's navigation performance.
+The bronchoscope is modeled as a 2mm continuum robot with a 0.03 A·m² magnet at its tip. An external 6-joint manipulator controls the magnetic field, initially set at 230 A·m². The environment includes main, lobar, and segmental bronchi. The robot navigates from the upper trachea to the target point, with a friction coefficient of 0.015 and a 2mm collision detection distance. 
 
-##### Simulation Results
-- The bronchoscope could smoothly navigate along the target path to the target position
-- Angle deviation significantly reduced, fewer collisions occurred, greatly improving navigation accuracy and safety
-- Experimental results verified the improvement in navigation performance with higher magnetic field strength
 
-![Case2_Simulation](images/Bronchoscopy_case2.jpg)
+Detailed configuration parameters have been saved in the [config_scene/case1](./config_scene/case1) folder.
+
+
+#### **Control Method:**
+
+**1. Manual navigation:**
+
+   - **Insertion/retraction:**  
+     * `CTRL + up/down`: Control insertion/retraction of the m-CR.
+
+   - **Magnetic field direction:**
+     * `CTRL + I/K`: Adjust inclination angle.
+     * `CTRL + J/L`: Adjust azimuth angle.
+
+**2. Automatic navigation:**
+
+   - **Insertion/retraction:**  
+     * `CTRL`: Control insertion/retraction of the m-CR.
+
+   - **Magnetic field direction:**  
+     * Automatic control via PID (Proportional-Integral-Derivative controller).
+
 
 ### Case 2: Endovascular Intervention Simulation
 
-#### Case Description
-Magnetic navigation endovascular intervention is a minimally invasive medical technology that navigates flexible catheters through arteries and veins for diagnosing and treating vascular diseases. Compared to traditional open surgery, this technology offers advantages of smaller incisions, shorter hospital stays, and lower complication risks. This simulation demonstrates the catheter robot's navigation process in the aortic arch, showing the impact of different electromagnetic coil configurations on magnetic navigation performance.
+#### **Scene Description**
 
-![Endovascular_Simulation](images/Endovascular_Intervention.jpg)
+![Endovascular_Simulation](images/Endovascular_Intervention.png)
 
-#### Three-Coil Configuration
-The simulation used a three-coil electromagnetic drive system, which only controls the catheter tip direction. Simulation results show:
+Magnetic navigation endovascular intervention is a minimally invasive medical technology that navigates flexible catheters through arteries and veins for diagnosing and treating vascular diseases. Compared to traditional open surgery, this technology offers advantages of smaller incisions, shorter hospital stays, and lower complication risks. This simulation demonstrates the catheter robot's navigation process in the aortic arch, showing the impact of electromagnetic coil configurations on magnetic navigation performance.
 
-- The catheter can roughly move along the centerline trajectory, but due to lack of lateral position control, occasional large magnetic forces cause the catheter tip to deviate from the centerline and collide with vessel walls
-- Maximum collision force reached 1.9 mN, potentially causing vessel damage
 
-![Case1_Simulation](images/Endovascular_Intervention_case1.jpg)
+#### **Navigation Details**
 
-#### Eight-Coil Configuration
-To address these issues, an improved eight-coil electromagnetic drive system was adopted, enhancing navigation accuracy through additional lateral position control. Simulation results show:
+![Endovascular_Simulation](images/Endovascular_Intervention_.png)
 
-- The catheter tip can precisely move along the centerline trajectory, completely avoiding collisions
-- Contact force between vessel and catheter remained zero, significantly improving navigation safety and performance
+In the simulation, a deformable geometric model of the aortic arch is used as the environment. The flexible catheter is modeled as a continuum robot with a permanent magnet of 0.04 A·m² magnetic moment embedded in its tip. An array of stationary electromagnets is used as the magnetic actuation source. The centerline of the aortic arch is extracted by the trajectory generator module, and the catheter robot follows this centerline at a constant advancement velocity of 35 mm/s.
 
-![Case2_Simulation](images/Endovascular_Intervention_case2.jpg)
+Detailed configuration parameters have been saved in the [config_scene/case2](./config_scene/case2) folder.
+
+#### **Control Method:**
+
+Identical to the `Case 1`
+
 
 ### Case 3: Magnetic Navigation Capsule Endoscopy Simulation
 
-#### Case Description
+#### **Scene Description**
+
 Capsule endoscopy is a small, untethered device with built-in camera for examining digestive tract diseases. Compared to traditional tethered endoscopes, capsule endoscopy can reduce patient discomfort and reach target areas with higher precision. This simulation demonstrates the navigation process of capsule endoscopy in the gastrointestinal tract, showing the combined application of magnetic drive and magnetic positioning.
 
-![Capsule_Endoscopy_Simulation](images/Capsule_Endoscopy.jpg)
+![Capsule_Endoscopy_Simulation](images/Capsule_Endoscopy.png)
 
-#### Three-Sensor Configuration (High Noise)
-The simulation used three magnetic field sensors for positioning, combined with an eight-coil electromagnetic array to drive the capsule endoscope. Simulation results show:
 
-- High sensor noise (40 mGauss) limited positioning accuracy
-- Capsule endoscope trajectory deviated from target path, difficult to navigate precisely to target position
-- Resulted in poor navigation performance and insufficient control stability
 
-![Case1_Simulation](images/Capsule_Endoscopy_case1.jpg)
 
-#### Five-Sensor Configuration (High Noise)
-To further improve performance, sensor count was increased to five, but noise level remained at 40 mGauss. Simulation results show:
+#### **Navigation Details**
 
-- Positioning error reduced compared to Case 1, navigation performance improved
-- Capsule endoscope could follow predetermined path better, but trajectory still not smooth enough
-- Noise presence limited navigation precision
+![Capsule_Endoscopy_Simulation](images/Capsule_Endoscopy_.png)
 
-![Case2_Simulation](images/Capsule_Endoscopy_case3.jpg)
+The simulation uses a deformable anatomical model of the stomach. The capsule endoscope is modeled as a rigid-body robot with a permanent magnet for magnetic actuation. An array of eight stationary electromagnetic coils is used for actuation, and magnetic sensors are used for pose tracking. The simulation evaluates different sensor array configurations.
 
-#### Five-Sensor Configuration (Low Noise)
-Using five sensors and optimizing the solution to reduce noise level to 8 mGauss further improved system performance. Simulation results show:
+Detailed configuration parameters have been saved in the [config_scene/case3](./config_scene/case3) folder.
 
-- Positioning accuracy significantly improved, position error reduced to 0.95 mm, orientation error to 9.86°
-- Capsule endoscope trajectory smooth, precisely following predetermined path
-- Achieved stable control, optimal navigation performance
 
-![Case3_Simulation](images/Capsule_Endoscopy_case3.jpg)
+#### **Control Method:**
+
+Click the  `Start` button to begin the simulation.
+
+
 
 ## License
 Please note that this code was initially developed for research purposes and may undergo changes, with no warranty of fitness for any particular purpose. For commercial licensing, please contact: Prof. Heng Wang (wanghengscut@scut.edu.cn)
