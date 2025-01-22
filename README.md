@@ -19,20 +19,20 @@
     - [Basic Environment Setup](#basic-environment-setup)
     - [Required Libraries](#required-libraries)
     - [Optional Libraries](#optional-libraries)
-    - [Running Instructions](#running-instructions)
-  - [Simulation Cases](#simulation-cases)
+    - [Running Instructions:](#running-instructions)
+  - [Simulation Cases:](#simulation-cases)
     - [Case 1: Bronchoscopy Navigation Experiment](#case-1-bronchoscopy-navigation-experiment)
-      - [**Scene Description**](#scene-description)
-      - [**Navigation Details**](#navigation-details)
-      - [**Control Method:**](#control-method)
+      - [Scene Description:](#scene-description)
+      - [Navigation Details:](#navigation-details)
+      - [Control Method:](#control-method)
     - [Case 2: Endovascular Intervention Simulation](#case-2-endovascular-intervention-simulation)
-      - [**Scene Description**](#scene-description-1)
-      - [**Navigation Details**](#navigation-details-1)
-      - [**Control Method:**](#control-method-1)
+      - [Scene Description](#scene-description-1)
+      - [Navigation Details](#navigation-details-1)
+      - [Control Method:](#control-method-1)
     - [Case 3: Magnetic Navigation Capsule Endoscopy Simulation](#case-3-magnetic-navigation-capsule-endoscopy-simulation)
-      - [**Scene Description**](#scene-description-2)
-      - [**Navigation Details**](#navigation-details-2)
-      - [**Control Method:**](#control-method-2)
+      - [Scene Description:](#scene-description-2)
+      - [Navigation Details:](#navigation-details-2)
+      - [Control Method:](#control-method-2)
   - [License](#license)
   - [Citation](#citation)
   - [Contact Information](#contact-information)
@@ -130,21 +130,21 @@ $ ...
 <!-- ## Running Instructions
 Launch software: Double-click `bin/Release/MNSS.exe` -->
 
-### Running Instructions
+### Running Instructions:
 
 The software is a pre-compiled version. To run it, follow these steps:
 
 1. Navigate to the `bin/Release` directory.
 2. Double-click the `MNSS.exe` file to launch the software. 
 
-## Simulation Cases
+## Simulation Cases:
 ### Case 1: Bronchoscopy Navigation Experiment
 
-#### **Scene Description**
+#### Scene Description:
 ![Bronchoscopy_Simulation](images/Bronchoscopy.png)
 Bronchoscopy is an important medical tool for examining and treating lung diseases, and magnetic navigation technology can enhance its flexibility and navigation capabilities in complex airways. This simulation case simulates the navigation process of a magnetic navigation bronchoscope in segmental bronchi, demonstrating the impact of magnetic field on navigation performance.
 
-#### **Navigation Details**
+#### Navigation Details:
 
 ![Bronchoscopy_Simulation](images/Bronchoscopy_.png)
 
@@ -154,7 +154,7 @@ The bronchoscope is modeled as a 2mm continuum robot with a 0.03 A·m² magnet a
 Detailed configuration parameters have been saved in the [config_scene/case1](./config_scene/case1) folder.
 
 
-#### **Control Method:**
+#### Control Method:
 
 **1. Manual navigation:**
 
@@ -176,14 +176,14 @@ Detailed configuration parameters have been saved in the [config_scene/case1](./
 
 ### Case 2: Endovascular Intervention Simulation
 
-#### **Scene Description**
+#### Scene Description
 
 ![Endovascular_Simulation](images/Endovascular_Intervention.png)
 
 Magnetic navigation endovascular intervention is a minimally invasive medical technology that navigates flexible catheters through arteries and veins for diagnosing and treating vascular diseases. Compared to traditional open surgery, this technology offers advantages of smaller incisions, shorter hospital stays, and lower complication risks. This simulation demonstrates the catheter robot's navigation process in the aortic arch, showing the impact of electromagnetic coil configurations on magnetic navigation performance.
 
 
-#### **Navigation Details**
+#### Navigation Details
 
 ![Endovascular_Simulation](images/Endovascular_Intervention_.png)
 
@@ -191,14 +191,14 @@ In the simulation, a deformable geometric model of the aortic arch is used as th
 
 Detailed configuration parameters have been saved in the [config_scene/case2](./config_scene/case2) folder.
 
-#### **Control Method:**
+#### Control Method:
 
 Identical to the `Case 1`
 
 
 ### Case 3: Magnetic Navigation Capsule Endoscopy Simulation
 
-#### **Scene Description**
+#### Scene Description:
 
 Capsule endoscopy is a small, untethered device with built-in camera for examining digestive tract diseases. Compared to traditional tethered endoscopes, capsule endoscopy can reduce patient discomfort and reach target areas with higher precision. This simulation demonstrates the navigation process of capsule endoscopy in the gastrointestinal tract, showing the combined application of magnetic drive and magnetic positioning.
 
@@ -207,7 +207,7 @@ Capsule endoscopy is a small, untethered device with built-in camera for examini
 
 
 
-#### **Navigation Details**
+#### Navigation Details:
 
 ![Capsule_Endoscopy_Simulation](images/Capsule_Endoscopy_.png)
 
@@ -216,7 +216,7 @@ The simulation uses a deformable anatomical model of the stomach. The capsule en
 Detailed configuration parameters have been saved in the [config_scene/case3](./config_scene/case3) folder.
 
 
-#### **Control Method:**
+#### Control Method:
 
 Click the  `Start` button to begin the simulation.
 
