@@ -142,6 +142,7 @@ The software is a pre-compiled version. To run it, follow these steps:
 
 #### Scene Description:
 ![Bronchoscopy_Simulation](images/Bronchoscopy.png)
+
 Bronchoscopy is an important medical tool for examining and treating lung diseases, and magnetic navigation technology can enhance its flexibility and navigation capabilities in complex airways. This simulation case simulates the navigation process of a magnetic navigation bronchoscope in segmental bronchi, demonstrating the impact of magnetic field on navigation performance.
 
 #### Navigation Details:
@@ -178,7 +179,7 @@ Detailed configuration parameters have been saved in the [Config_Scene/case1](ht
 
 ![Endovascular_Simulation](images/Endovascular_Intervention.png)
 
-Magnetic navigation endovascular intervention is a minimally invasive medical technology that navigates flexible catheters through arteries and veins for diagnosing and treating vascular diseases. Compared to traditional open surgery, this technology offers advantages of smaller incisions, shorter hospital stays, and lower complication risks. This simulation demonstrates the catheter robot's navigation process in the aortic arch, showing the impact of electromagnetic coil configurations on magnetic navigation performance.
+Magnetic navigation endovascular intervention is a minimally invasive medical technology that navigates flexible catheters through arteries and veins for diagnosing and treating vascular diseases. Compared to traditional open surgery, this technology offers advantages of smaller incisions, shorter hospital stays, and lower complication risks. This simulation demonstrates the catheter robot's navigation process in the aortic arch, showing the impact of electromagnetic coil configurations on magnetic navigation performance and the combined application of magnetic drive and magnetic positioning.
 
 
 #### Navigation Details
@@ -198,7 +199,7 @@ Identical to the `Case 1`
 
 #### Scene Description:
 
-Capsule endoscopy is a small, untethered device with built-in camera for examining digestive tract diseases. Compared to traditional tethered endoscopes, capsule endoscopy can reduce patient discomfort and reach target areas with higher precision. This simulation demonstrates the navigation process of capsule endoscopy in the gastrointestinal tract, showing the combined application of magnetic drive and magnetic positioning.
+Capsule endoscopy is a small, untethered device with built-in camera for examining digestive tract diseases. Compared to traditional tethered endoscopes, capsule endoscopy can reduce patient discomfort and reach target areas with higher precision. This simulation demonstrates the navigation process of capsule endoscopy in the gastrointestinal tract, showing hybrid magnetic actuation for multi-magnet, multi-robot navigation in deformable anatomy.
 
 ![Capsule_Endoscopy_Simulation](images/Capsule_Endoscopy.png)
 
