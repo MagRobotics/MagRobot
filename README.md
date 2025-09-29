@@ -149,7 +149,7 @@ Bronchoscopy is an important medical tool for examining and treating lung diseas
 
 ![Bronchoscopy_Simulation](images/Bronchoscopy_.png)
 
-The bronchoscope is modeled as a 2mm continuum robot with a 0.03 A·m² magnet at its tip. An external 6-joint manipulator controls the magnetic field, initially set at 230 A·m². The environment includes main, lobar, and segmental bronchi. The robot navigates from the upper trachea to the target point, with a friction coefficient of 0.015 and a 2mm collision detection distance. 
+The bronchoscope is modeled as a 2mm continuum robot with a 0.03 A·m² magnet at its tip. An external 6-joint manipulator controls the magnetic field, initially set at 350 A·m². The environment includes main, lobar, and segmental bronchi. The robot navigates from the upper trachea to the target point, with a friction coefficient of 0.015 and a 2mm collision detection distance. 
 
 Detailed configuration parameters have been saved in the [Config_Scene/case1](https://github.com/MagRobotics/MagRobot-An-Open-Simulation-Platform-for-Magnetically-Navigated-Robots/tree/master/Config_Scene/Case1) folder.
 
@@ -186,7 +186,7 @@ Magnetic navigation endovascular intervention is a minimally invasive medical te
 
 ![Endovascular_Simulation](images/Endovascular_Intervention_.png)
 
-In the simulation, a deformable geometric model of the aortic arch is used as the environment. The flexible catheter is modeled as a continuum robot with a permanent magnet of 0.04 A·m² magnetic moment embedded in its tip. An array of stationary electromagnets is used as the magnetic actuation source. The centerline of the aortic arch is extracted by the trajectory generator module, and the catheter robot follows this centerline at a constant advancement velocity of 35 mm/s.
+In the simulation, a deformable geometric model of the aortic arch is used as the environment. The flexible catheter is modeled as a continuum robot with a permanent magnet of 0.03 A·m² magnetic moment embedded in its tip. An array of stationary electromagnets is used as the magnetic actuation source. The centerline of the aortic arch is extracted by the trajectory generator module, and the catheter robot follows this centerline at a constant advancement velocity of 35 mm/s.
 
 Detailed configuration parameters have been saved in the [Config_Scene/case2](https://github.com/MagRobotics/MagRobot-An-Open-Simulation-Platform-for-Magnetically-Navigated-Robots/tree/master/Config_Scene/Case2) folder.
 
