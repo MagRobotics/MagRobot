@@ -26,52 +26,104 @@ This case adopts a simplified configuration with three electromagnetic coils, us
 - Magnetic Moment: 0.03
 
 ## 3. Electromagnetic Coil Configuration
-3 electromagnetic coils with parameters as follows:
+8 electromagnetic coils with parameters as follows:
 
 1. Coil 1:
-   - Drive Type: still_elc
+   - Drive Type: elc_still
    - Radius: 0.05
-   - Position: [0, 0.16, 1.2034, 0.0, 8.66555525e-01, -4.99080199e-01]
+   - Position: [0, 0.16, 1.2034, 0.0,  8.66555525e-01, -4.99080199e-01]
    - Number of Turns: 100
 
 2. Coil 2:
-   - Drive Type: still_elc
+   - Drive Type: elc_still
    - Radius: 0.05
    - Position: [0.1312, 0.4012335, 1.2034, -0.62469505, -0.62469505, -0.46852129]
    - Number of Turns: 100
 
 3. Coil 3:
-   - Drive Type: still_elc
+   - Drive Type: elc_still
    - Radius: 0.05
    - Position: [-0.1312, 0.4012335, 1.2034, 0.62469505, -0.62469505, -0.46852129]
    - Number of Turns: 100
 
-## 4. Environment Settings
+## 4. Sensor Configuration
+1. Sensor 1:
+   - Position: [-0.0196, 0.285, 0.896, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 1e-8
+
+2. Sensor 2:
+   - Position: [-0.0196, 0.40, 0.906, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 1e-8
+
+3. Sensor 3:
+   - Position: [-0.0196, 0.40, 0.906, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 1e-8
+
+4. Sensor 4:
+   - Position: [0.0196, 0.40, 0.906, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 1e-8
+
+5. Sensor 5:
+   - Position: [-0.0196, 0.17, 0.896, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 1e-8
+  
+6. Sensor 6:
+   - Position: [0.0196, 0.17, 0.896, 0.0, 0.0, 0.0, 1.0]
+   - Noise: 1e-8
+
+## 5. Environment Settings
 - Gravity: [0.0, 0.0, -9.8]
 - Force Display Scale: [0.0, 0.0]
 - Time Step: 0.005
 - Friction Coefficient: 0.004
-- Contact Distance: 0.002
+- Contact Distance: 0.001
 - Background Color: [1, 1, 1]
 - Camera Parameters: cam=0
 - Trajectory Parameters: tra=0
-- Field Display: [[-0.1, 0.2, 1.075, 0.1, 0.4, 1.15, 0.025]]
+- Field Display: 0
 
-## 5. Path Settings
+## 6. Path Settings
 - Path Type: planning
 - Pose: [-0.005, 0.35, 0.97, 0, 0.707, 0.707, 0]
 - Scale: 0.013
 - Type: centerline
 
-## 6. Algorithm Configuration
-- Algorithm Type: none
+## 7. Algorithm Configuration
+### EKF Parameters
+- Algorithm Type: EKF
+- EKF_Q: 6x6 Identity Matrix
 
-## 7. Control Parameters
+[[1, 0, 0, 0, 0, 0],
+[0, 1, 0, 0, 0, 0],
+[0, 0, 1, 0, 0, 0],
+[0, 0, 0, 1, 0, 0],
+[0, 0, 0, 0, 1, 0],
+[0, 0, 0, 0, 0, 1]]
+
+- EKF_R: 15x15 Identity Matrix
+
+[[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]]
+
+## 8. Control Parameters
 - Position Control: PID
-- kp: 0
+- kp: 150
 - ki: 0.2
 - kd: 0
 - Attitude Control: PID
 - kp2: 10
 - ki2: 0.0
-- kd2: 0 
+- kd2: 2.0 
