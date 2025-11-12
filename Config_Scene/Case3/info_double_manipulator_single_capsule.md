@@ -57,7 +57,7 @@
 
 ## 4. Environment Settings
 - Gravity: [0.0, 0.0, 0]
-- Time Step: 0.01
+- Time Step: 0.02
 - Friction Coefficient: 0.04
 - Contact Distance: 0.003
 - Background Color: [1, 1, 1]
