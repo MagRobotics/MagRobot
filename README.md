@@ -97,8 +97,7 @@ MagRobot/                       # Root directory
 │   ├── post_processing.py      # Results processing
 │   ├── record.py               # Data recording utility
 │   ├── rotation_maxwell.py     # Maxwell equations solver
-│   ├── simulator_setting.py    # Simulation parameters
-│   └── 
+│   └── simulator_setting.py    # Simulation parameters
 ├── lib/                        # Project required libraries and dependencies
 └── README.md                   # Project documentation
 ```
