@@ -1,6 +1,6 @@
 # MagRobot: An Open Simulation Platform for Magnetically Navigated Robots
 
-[![Paper](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)](https://arxiv.org/xxxxxxxxx)
+[![Paper](https://img.shields.io/badge/arXiv-2603.05992-b31b1b.svg)](https://doi.org/10.48550/arXiv.2603.05992)
 [![Video](https://img.shields.io/badge/Video-YouTube-red.svg)](https://www.youtube.com/xxxxxxxx)
 [![License](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
@@ -33,6 +33,10 @@
       - [Scene Description:](#scene-description-2)
       - [Navigation Details:](#navigation-details-2)
       - [Control Method:](#control-method-2)
+    - [Case 4: Cardiac Electrophysiology](#case-4-cardiac-electrophysiology)
+      - [Scene Description:](#scene-description-3)
+      - [Navigation Details:](#navigation-details-3)
+      - [Control Method:](#control-method-3)
   - [License](#license)
   - [Citation](#citation)
   - [Contact Information](#contact-information)
@@ -220,6 +224,37 @@ Detailed configuration parameters have been saved in the [Config_Scene/case3](ht
 Click the  `Start` button to begin the simulation.
 
 
+### Case 4: Cardiac Electrophysiology
+
+#### Scene Description:
+
+![Cardiac_Electrophysiology](images/Cardiac_Electrophysiology.png)
+
+Cardiac radiofrequency ablation is a mainstream minimally invasive procedure for treating arrhythmias such as atrial fibrillation. In a typical procedure, a catheter is inserted through the femoral vein, delivered into the right atrium, and then passed into the left atrium via transseptal puncture to reach the four pulmonary vein ostia (LSPV, RSPV, LIPV, RIPV) for ablation. Traditional pull-wire-steered catheters often face bottlenecks such as insufficient steering precision and limited flexibility within the complex anatomy of the heart, while magnetic navigation with contactless actuation can provide more dexterous bending. This simulation case aims to validate the proposed simulator for a **multi-magnet continuum robot under complex anatomical constraints**, and demonstrates how embedding multiple permanent magnets with different magnetizations along the catheter can overcome the limitations of single-magnet steering during rotational ablation.
+
+#### Navigation Details:
+
+![Cardiac_Electrophysiology](images/Cardiac_Electrophysiology_.png)
+
+A high-fidelity rigid stationary heart model synthesized from CT scans is used as the environment, covering the entire path from the inferior vena cava to the left atrium. The flexible ablation catheter is modeled as a continuum robot. In the initial single-magnet configuration, a permanent magnet with a magnetic moment of 0.04 A·m² is embedded in the catheter tip, with its magnetization direction deflected 15° from the catheter axis. A stationary array of **eight electromagnetic coils** is used as the magnetic actuation source. Bidirectional bending and advancement of the catheter are controlled by the user via the keyboard, guiding the robot to reach the four pulmonary vein targets and bending the tip to perform rotational ablation tasks.
+
+In the initial single-magnet configuration, the catheter can reach the target position but encounters significant difficulties during rotational ablation at the pulmonary vein ostium: due to the lack of structural support at the distal segment, the catheter body tends to collapse and collide with the atrial wall, which restricts the rotational degrees of freedom of the tip, causes instability of the rotational ablation procedure, increases the risk of incomplete ablation, and significantly prolongs the procedural time. To address these issues of wall collision and limited maneuverability, a second permanent magnet is embedded coaxially in the sub-distal segment of the catheter. In this **dual-magnet configuration with different magnetization directions**, a closed-loop lateral position control strategy is implemented for the sub-distal segment, while the distal tip remains under teleoperated orientation control. Magnetic force is applied to anchor the sub-distal magnet at a fixed position, serving as a **virtual pivot** to provide stable structural support. This strategy effectively prevents the catheter from colliding with the vessel wall and ensures that the distal tip can perform a uniform and smooth rotational ablation operation.
+
+Detailed configuration parameters have been saved in the [Config_Scene/case4](https://github.com/MagRobotics/MagRobot-An-Open-Simulation-Platform-for-Magnetically-Navigated-Robots/tree/master/Config_Scene/Case4) folder.
+
+#### Control Method:
+
+**1. Insertion / retraction:**
+   * `CTRL + up/down`: Advance / retract the magnetic catheter robot.
+
+**2. Distal-tip orientation (open-loop, teleoperated):**
+   * `CTRL + I/K`: Adjust the inclination angle of the tip magnetic field.
+   * `CTRL + J/L`: Adjust the azimuth angle of the tip magnetic field.
+
+**3. Sub-distal anchoring (closed-loop lateral position control):**
+   * Press `T` to engage the sub-distal anchor — the virtual pivot is activated and the sub-distal magnet is held at its target position by PID-regulated magnetic force.
+   * Press `T` again to release the anchor — the catheter returns to single-magnet (tip-only) actuation.
+
 
 ## License
 Please note that this code was initially developed for research purposes and may undergo changes, with no warranty of fitness for any particular purpose. For commercial licensing, please contact: Prof. Heng Wang (wanghengscut@scut.edu.cn)
@@ -242,13 +277,15 @@ Please note that this code was initially developed for research purposes and may
 ## Citation
 If you use our simulation platform in your research, please cite our preprint paper:
 ```
-@ARTICLE{rotortm2023,
-  author={Heng Wang, Haoyu Song, Jiatao Zheng},
-  journal={arXiv:xxx.xxx.xxx},
-  title={MagRobot: An Open Simulation Platform for Magnetically Navigated Robots},
-  year={2025},
-  note={Preprint},
-  url={https://arxiv.org/abs/xxx.xxx.xxx}}
+@misc{wang2026magrobot,
+  author        = {Heng Wang and Haoyu Song and Jiatao Zheng},
+  title         = {MagRobot: An Open Simulation Platform for Magnetically Navigated Robots},
+  year          = {2026},
+  eprint        = {2603.05992},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  doi           = {10.48550/arXiv.2603.05992},
+  url           = {https://doi.org/10.48550/arXiv.2603.05992}}
 ```
 
 ## Contact Information
