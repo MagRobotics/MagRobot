@@ -70,7 +70,8 @@ MagRobot/                       # Root directory
 ├── Config_Scene/               # Configuration files for different application scenarios
 │   ├── Case1                   # Bronchoscopy navigation experiment configurations
 │   ├── Case2                   # Endovascular intervention simulation configurations
-│   └── Case3                   # Magnetic capsule endoscopy simulation configurations
+│   ├── Case3                   # Magnetic capsule endoscopy simulation configurations
+│   └── Case4                   # Cardiac electrophysiology simulation configurations
 ├── demo_c/                     # Core functional modules and example code
 │   ├── Control_Package         # Control algorithm package
 │   ├── Data_Driven             # Data-driven related modules
